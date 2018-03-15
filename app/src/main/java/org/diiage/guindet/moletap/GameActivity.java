@@ -115,7 +115,10 @@ public class GameActivity extends AppCompatActivity {
                 nextMole += rand.nextInt((150 - 50) + 1) + 50;
             }
 
-            if (tmp == 0)
+            TextView txtScore = findViewById(R.id.txtScores);
+            txtScore.setText(String.valueOf(score));
+
+            if (tmp <= 0)
             {
                 timer.cancel();
 
@@ -131,7 +134,8 @@ public class GameActivity extends AppCompatActivity {
                 bundle.putInt("score", score);
                 intent.putExtras(bundle);
 
-                setResult(0,intent);
+                setResult(RESULT_OK,intent);
+
                 finish();
             }
         }

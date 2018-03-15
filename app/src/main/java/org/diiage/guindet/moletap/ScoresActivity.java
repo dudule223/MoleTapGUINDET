@@ -98,12 +98,12 @@ public class ScoresActivity extends AppCompatActivity {
             final ArrayList<Score> scores = (ArrayList<Score>) extra.getSerializable("scores");
 
             ListView lst = findViewById(R.id.lstScores);
-            /*
-            ArrayAdapter<Score> adapter = new ArrayAdapter<Score>(ScoresActivity.this,android.R.layout.simple_list_item_1,scores);
-            lst.setAdapter(adapter);
-            */
 
-            ScoreAdapter adapter = new ScoreAdapter(ScoresActivity.this, scores);
+            ArrayAdapter<Score> adapter = new ArrayAdapter<Score>(ScoresActivity.this,android.R.layout.simple_list_item_1,scores);
+
+            //ScoreAdapter adapter = new ScoreAdapter(ScoresActivity.this, scores);
+
+
             lst.setAdapter(adapter);
 
 

@@ -74,14 +74,19 @@ public class MainActivity extends AppCompatActivity {
         // Check which request we're responding to
         if (requestCode == 0)
         {
-
+            if (resultCode == RESULT_OK)
+            {
                 Bundle extra = data.getExtras();
                 Score score = new Score(((EditText)findViewById(R.id.txtName)).getText().toString(), extra.getInt("score"));
                 lstScores.add(score);
 
 
                 Toast.makeText(MainActivity.this,"Score : "+score.getScore(),Toast.LENGTH_LONG).show();
-
+            }
+            else
+            {
+                Toast.makeText(MainActivity.this,"Partie abandonnée",Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
